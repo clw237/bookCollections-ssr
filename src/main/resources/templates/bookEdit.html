@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="~{fragments/header :: common-header(~{::title})}">
+	    <title>New Book Registration</title>
+	</head>
+	<body>
+		<div th:replace="~{fragments/navigation :: navigation}"></div>
+
+		<div class="container my-5">
+			<h4 class="text-center">Edit Book</h4>
+			<form class="col-md-4 offset-md-4 p-5" style="border:1px solid black;" th:action="@{/save}" method="post" th:object="${book}">
+			  	<input type="hidden" name="id" th:value="${book.id}">
+				<div class="mb-3">
+			    <label for="name" class="form-label">Name</label>
+			    <input type="text" class="form-control" name="name" autocomplete="off" th:value="${book.name}">
+			  </div>
+			  <div class="mb-3">
+                <label for="author" class="form-label">Author</label>
+                <input type="text" class="form-control" name="author" autocomplete="off" th:value="${book.author}">
+            </div>
+            <div class="mb-3">
+                <label for="summary" class="form-label">Summary</label>
+                <input type="text" class="form-control" name="summary" autocomplete="off" th:value="${book.summary}">
+            </div>
+			
+			  <center><button type="submit" class="btn btn-primary">Submit</button></center>
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="~{fragments/header :: common-header(~{::title})}">
+	    <title>Search For a Book</title>
+	</head>
+	<body>
+		<div th:replace="~{fragments/navigation :: navigation}"></div>
+		<div class="container text-center my-5">
+			<h1>Search for a Book</h1>
+			<form class="mb-5" action="#" th:action="@{/search}" method="get">
+			    <input type="text" name="title" placeholder="Enter book title" required />
+			    <button type="submit">Search</button>
+			</form>
+			<h2 class="text-center" th:if="${book != null}">Search Result</h2>
+			<div class="text-start p-5" style="border:1px solid black;" th:if="${book != null}">
+				<p><strong>Name:</strong> <span th:text="${book.name}">Name</span></p>
+			    <p><strong>Author:</strong> <span th:text="${book.author}">Author</span></p>
+			    <p><strong>Summary:</strong> <span th:text="${book.summary}">Summary</span></p>
+			</div>
+		</div>
+		<div th:if="${book != null}">
+			<form class="col-md-4 offset-md-4 p-5" style="border:1px solid black;" th:action="@{/save}" method="post" th:object="${book}">
+				<div class="mb-3">
+				  <label for="name" class="form-label">Name</label>
+				  <input type="text" class="form-control" name="name" autocomplete="off" th:value="${book.name}">
+				</div>
+				<div class="mb-3">
+				  <label for="author" class="form-label">Author</label>
+				  <input type="text" class="form-control" name="author" autocomplete="off" th:value="${book.author}">
+				</div>
+		        <div class="mb-3">
+		            <label for="summary" class="form-label">Summary</label>
+		            <input type="text" class="form-control" name="summary" autocomplete="off" th:value="${book.summary}">
+		        </div>
+			  <center><button type="submit" class="btn btn-primary">Add to Library</button></center>
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="~{fragments/header :: common-header(~{::title})}">
+	    <title>My Books</title>
+	</head>
+	<body>
+		<div th:replace="~{fragments/navigation :: navigation}"></div>
+	
+		<div class="container my-5 col-md-6">
+			<h4 class="text-center">My Books</h4>
+			<table class="table table-striped table-hover table-bordered">
+			  <thead class="table-dark">
+			    <tr>
+<!-- 			      <th scope="col">Id</th> -->
+			      <th scope="col">Name</th>
+			      <th scope="col">Author</th>
+			      <th scope="col">Summary</th>
+				  <th scope="col">Action</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr th:each="b :${book}">
+<!-- 			      <td th:text="${b.id}"></td> -->
+			      <td th:text="${b.name}"></td>
+				  <td th:text="${b.author}"></td>
+				  <td th:text="${b.summary}"></td>
+				  <td>
+					<a style="color:red" th:href="@{/deleteMyBook/{id}(id=${b.id})}"><i class="fa-solid fa-trash"></i></a>
+				  </td>
+			    </tr>
+			  </tbody>
+			</table>
+		</div>
+	</body>
+</html>
