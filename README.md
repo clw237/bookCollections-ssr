@@ -30,10 +30,10 @@ This project is a web application built using **Spring Boot** and **Thymeleaf** 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/USERNAME/REPOSITORY_NAME.git
+   git clone https://github.com/clw237/bookCollections-ssr.git
 2. Navigate to the project directory:
 	```bash
-	cd REPOSITORY_NAME
+	cd bookCollections-ssr
 3. Configure your MySQL database:
 	Create a new database (e.g., bookstore).
 	Update the application.properties file with your MySQL connection details:
