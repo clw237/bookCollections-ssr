@@ -48,5 +48,5 @@ This project is a web application built using **Spring Boot** and **Thymeleaf** 
 	mvn spring-boot:run
 	
 ### Usage
-- Open your browser and navigate to http://localhost:8080 to access the application.
+- Open your browser and navigate to http://localhost:1001 to access the application.
 - Use the navigation links to search for books, register new books, view available books, and manage your personal book list.
