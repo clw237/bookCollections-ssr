@@ -3,6 +3,7 @@
 ## Overview
 
 This project is a web application built using **Spring Boot** and **Thymeleaf** for server-side rendering. It allows users to perform simple lookups to the **OpenLibrary API** to find books, enter their own books to create a wish list, and manage their personal book collection. The application uses **MySQL** as the database to store book information and user-generated content.
+![Home Page](src/main/resources/static/images/BookCollection-homepage.png)
 
 ## Features
 
